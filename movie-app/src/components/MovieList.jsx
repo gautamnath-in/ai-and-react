@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { Context } from '../interChangingData/Context';
 
 export default function MovieList() {
 
@@ -13,11 +14,19 @@ export default function MovieList() {
             })
     }, []);
 
+    // Movie Searched 
+    const [moviesLookup, setMoviesLookup] = useState([]);
+    const { searchedValue } = useContext(Context);
+    // if (searchedValue !== '') setMoviesLookup(`<h1>You searched for: ${searchedValue}</h1>`)
+
+    // useEffect(() => { setMoviesLookup(searchedValue) }, [searchedValue])
     return (
         <>
+            {/* {moviesLookup} */}
+            <h1>You searched for: {searchedValue}</h1>
             <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 xl:mt-12 xl:grid-cols-3 xl:gap-16">
                 {movies.map(item => (
-                    <div className="relative h-[400px] w-[300px] rounded-md">
+                    <div className="relative h-[400px] w-[300px] rounded-md" key={item.id}>
                         <img
                             src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
                             alt="AirMax Pro"
