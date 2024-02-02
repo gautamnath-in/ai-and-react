@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react'
+import { useContext, useState } from 'react'
 import { Context } from '../interChangingData/Context';
 
 export default function SearchMovie() {
@@ -12,10 +12,7 @@ export default function SearchMovie() {
         setSearchedValue(searchText);
         setSearchBtnText(searchText !== '' ? 'Search Another' : 'Search');
         setSearchText('');
-        // console.log(searchText, setSearchedValue)
     }
-
-    // useEffect(() => { handleSubmit() }, [searchText])
 
     return (
         <div className="flex w-full items-center space-x-2 ">

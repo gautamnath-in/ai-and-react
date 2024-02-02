@@ -1,20 +1,21 @@
-import { useContext, useEffect } from 'react';
 import './App.css'
-import MovieList from './components/MovieList';
-import SearchMovie from './components/SearchMovie';
-import { Context } from './interChangingData/Context';
+
 import ContextProvider from './interChangingData/ContextProvider';
+import SearchMovie from './components/SearchMovie';
+import SearchTerm from './components/SearchTerm';
+import MovieList from './components/MovieList';
+import Fetch from "./components/api/Fetch";
 
 function App() {
 
-
-  // const { searchedValue } = useContext(Context)
+  // Fetch(); //this handles the API Request
 
   return (
     <>
       <ContextProvider>
+        <Fetch />
         <SearchMovie />
-        {/* <h1>You searched for: {searchedValue}</h1> */}
+        <SearchTerm />
         <MovieList />
       </ContextProvider>
     </>
