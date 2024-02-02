@@ -1,5 +1,6 @@
 # React + Vite
 
+```
 ├── App
 │ ├── ContextProvider
 │ │ ├── Fetch (For API Calls)
@@ -9,3 +10,4 @@
 │ │ | ├── MovieLayout
 │ │ | ├── ErrorPage
 └── Tailwind CSS
+```
