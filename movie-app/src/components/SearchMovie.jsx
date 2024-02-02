@@ -4,14 +4,15 @@ import { Context } from '../interChangingData/Context';
 export default function SearchMovie() {
 
     const [searchText, setSearchText] = useState('');
+    // const [searchBtnText, setSearchBtnText] = useState('Search');Moving to Provider for resting movie Search
 
-    const { setSearchedValue } = useContext(Context)
+    const { setSearchedValue, searchBtnText, setSearchBtnText } = useContext(Context)
 
     const handleSubmit = (e) => {
-        // e.preventDefault();
-
         setSearchedValue(searchText);
-        console.log(searchText, setSearchedValue)
+        setSearchBtnText(searchText !== '' ? 'Search Another' : 'Search');
+        setSearchText('');
+        // console.log(searchText, setSearchedValue)
     }
 
     // useEffect(() => { handleSubmit() }, [searchText])
@@ -29,9 +30,9 @@ export default function SearchMovie() {
             <button
                 onClick={handleSubmit}
                 type="button"
-                className="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                className="whitespace-nowrap rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
             >
-                Search
+                {searchBtnText}
             </button>
         </div>
     )
