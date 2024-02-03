@@ -1,6 +1,6 @@
 const MoviesLayout = ({ movie }) => {
     return (
-        <div className="relative h-[400px] w-[300px] rounded-md">
+        <div className="relative h-[400px] w-[300px] rounded-md mx-auto">
             <img
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                 alt="AirMax Pro"
