@@ -49,7 +49,7 @@ export default function NowPlaying() {
                                 <div className="relative  bg-slate-500 rounded-2xl" key={movie.id}>
                                     <div className="max-h-32">
                                         <img className="object-cover w-max max-h-32 rounded-xl"
-                                            src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} />
+                                            src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} />
                                     </div>
                                     <div className="capitalize text-4xl font-extrabold rounded-lb-3xl  absolute inset-x-0 bottom-0 max-h-31">
                                         <span className="box-decoration-clone bg-gradient-to-r from-indigo-500 rounded-l-lg text-white font-normal">

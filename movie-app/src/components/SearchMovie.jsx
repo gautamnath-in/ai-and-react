@@ -22,6 +22,7 @@ export default function SearchMovie() {
                         <h2 className="mb-2 text-[50px] font-bold leading-none text-white sm:text-[80px] md:text-[100px]">
                             Welcome.
                         </h2>
+                        <small>This product uses the TMDB API but is not endorsed or certified by TMDB.</small>
                         <h3 className="mb-3 text-[22px] font-semibold leading-tight text-white">
                             Time to discover good movies. Explore now.
                         </h3>
