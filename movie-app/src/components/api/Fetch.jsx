@@ -5,7 +5,7 @@ const Fetch = () => {
     // const [movies, setMovies] = useState([]); Moved to Provider
 
     const { setMovies } = useContext(Context);
-    const { category, setCategory, onDemandMovies, setOnDemandMovies } = useContext(Context); //movie category request
+    const { category, setOnDemandMovies } = useContext(Context); //movie category request
     useEffect(() => {
         fetch(
             "https://api.themoviedb.org/3/movie/popular?api_key=14d9b8074098217511e35ec624c745ec",
