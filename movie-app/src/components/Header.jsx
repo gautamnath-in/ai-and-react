@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Header() {
@@ -14,7 +15,9 @@ export default function Header() {
       to: '/contact',
       title: 'Contact'
     }
-  ]
+  ];
+
+  const [isActive, setIsActive] = useState('')
 
   return (
     <>
@@ -40,10 +43,10 @@ export default function Header() {
           <div className="hidden lg:block">
             <ul className="inline-flex space-x-8">
               {menuItems.map(menu =>
-                <li>
+                <li key={menu.title} onClick={() => setIsActive(menu.title)}>
                   <Link
                     to={menu.to}
-                    className="text-sm font-semibold text-gray-800 hover:text-gray-900"
+                    className={`${isActive == menu.title ? 'text-orange-400' : 'text-gray-800'} text-sm font-semibold hover:text-gray-900`}
                   >
                     {menu.title}
                   </Link>
